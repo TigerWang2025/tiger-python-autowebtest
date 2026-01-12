@@ -1,0 +1,21 @@
+import time
+
+# 封装我们web中常用的关键字内容
+# 有多少个方法，就封装多少个
+class Keywords:
+    # 所有的操作均需要浏览器
+    def __init__(self, driver):
+        self.driver = driver    # 拿到浏览器
+
+    # 浏览器去做具体的操作
+    def open(self, **kwargs):
+        self.driver.get(kwargs["数据内容"])
+
+    def on_input(self, **kwargs):
+        self.driver.find_element(kwargs["定位方式"], kwargs["目标对象"]).send_keys(kwargs["数据内容"])
+
+    def on_click(self, **kwargs):
+        self.driver.find_element(kwargs["定位方式"], kwargs["目标对象"]).click()
+
+    def wait(self, **kwargs):
+        time.sleep(kwargs["数据内容"])
