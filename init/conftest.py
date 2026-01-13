@@ -1,10 +1,13 @@
-# configdriver.py 文件不能改动，它是pytest框架配置文件，是测试框架
+# conftest.py 文件不能改动，它是pytest框架配置文件，是测试框架
 # 提前安装 ： pip install pytest
 # 提前安装 ： pip install selenium
 # 当前此文件是自动运行，所以在写好之后，就不需要再去动了。
 import pytest
 from _pytest.fixtures import fixture
 from selenium import webdriver
+
+from init.Keywords import Keywords
+
 
 # 全部使用 -- 这个浏览器的作用域 #session
 @pytest.fixture(scope='session')
@@ -20,3 +23,9 @@ def driver():
     yield driver
     # 关闭浏览器
     driver.quit()
+
+
+@pytest.fixture(scope='session')
+def keywords(driver):
+    # 实例化一个keywords
+    return Keywords(driver)

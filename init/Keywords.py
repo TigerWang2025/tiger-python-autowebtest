@@ -17,5 +17,6 @@ class Keywords:
     def on_click(self, **kwargs):
         self.driver.find_element(kwargs["定位方式"], kwargs["目标对象"]).click()
 
-    def wait(self, **kwargs):
+    @staticmethod
+    def wait(**kwargs):
         time.sleep(kwargs["数据内容"])
