@@ -26,6 +26,7 @@ def test_excel(cases, keywords):
     # 调用方法，方法名（参数）
     funname(**cases)
 
+
 # all_case = pd.read_excel(r".\resources\Test.xlsx", sheet_name = 'TestControl')
 # 逐行打印数据
 # for index, row in all_case.iterrows():
@@ -45,3 +46,4 @@ def test_excel(cases, keywords):
 #         print(e)
 #     # 调用方法，方法名（参数）
 #     funname(**cases)
+

@@ -7,7 +7,6 @@ from selenium import webdriver
 
 from init.Keywords import Keywords
 
-
 # 全部使用 -- 这个浏览器的作用域 #session
 @pytest.fixture(scope='session')
 def driver():
