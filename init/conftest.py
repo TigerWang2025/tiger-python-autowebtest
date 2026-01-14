@@ -3,7 +3,6 @@
 # 提前安装 ： pip install selenium
 # 当前此文件是自动运行，所以在写好之后，就不需要再去动了。
 import pytest
-from _pytest.fixtures import fixture
 from selenium import webdriver
 
 from init.Keywords import Keywords
