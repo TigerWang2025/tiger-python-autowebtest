@@ -21,8 +21,12 @@ def test_excel(cases, keywords):
     try:
         # 内置属性，可以在类当中找到对应的方法
         funname = keywords.__getattribute__(keys)  # 一个方法
+    except AttributeError as e:
+        print(f"未找到关键字对应的方法: {keys}")
+        raise e
     except Exception as e:
-        print(e)
+        print(f"执行方法时发生错误: {e}")
+        raise e
     # 调用方法，方法名（参数）
     funname(**cases)
 
